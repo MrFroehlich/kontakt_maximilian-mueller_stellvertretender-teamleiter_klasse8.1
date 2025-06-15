@@ -1,0 +1,130 @@
+/* Grundlegendes Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body als Flex-Container, Sticky Footer */
+html, body {
+  height: 100%;
+  overflow-x: hidden; /* Kein horizontaler Scrollbalken */
+  font-family: 'Roboto', sans-serif;
+  background-color: #1f1f1f;
+  color: #ffffff;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Hauptinhalt wächst, Footer bleibt unten */
+main {
+  flex: 1 0 auto;
+  max-width: 1000px;  /* Maximalbreite */
+  width: 90%;         /* Flexible Breite */
+  margin: 40px 0 40px 40px; /* oben, rechts, unten, links */
+  padding: 20px;
+  color: #e0e0e0;
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+/* Footer */
+footer.footer {
+  flex-shrink: 0;
+  background-color: #181818;
+  color: #aaaaaa;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9rem;
+  border-top: 2px solid #333;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Hero2 Sektion */
+.hero2 {
+  background: linear-gradient(to right, #24415b, #24415b);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 4px solid #1A2E41;
+}
+
+.hero2 h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.hero2 p {
+  font-size: 1.2rem;
+  margin: 0 20px 50px;
+}
+
+/* Überschriften */
+h2 {
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1.5em;
+}
+
+h3 {
+  color: #03b6fc;
+  margin-bottom: 0.5em;
+}
+
+/* Links */
+a {
+  color: #19ace6;
+  word-wrap: break-word; /* Lange Links umbrechen */
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Media Queries für kleine Bildschirme */
+@media (max-width: 600px) {
+
+  main {
+    width: 95%;
+    margin: 20px auto;
+    font-size: 1rem;
+  }
+
+  .hero2 h1 {
+    font-size: 1.8rem;
+    margin: 0 10px 15px;
+  }
+
+  .hero2 p {
+    font-size: 1rem;
+    margin: 0 10px 30px;
+  }
+
+}
+
+/* Optional: Verhindert, dass Bilder oder andere Inhalte den Container sprengen */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
